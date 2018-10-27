@@ -1,0 +1,550 @@
+{
+  "renderer": "global",
+  "layout": "ltrTree",
+  "name": "edge",
+  "entryNode": "INTERNET",
+  "maxVolume": 1000,
+  "nodes": [
+    {
+      "renderer": "region",
+      "name": "INTERNET",
+      "displayName": "INTERNET",
+      "nodes": [],
+      "connections": [],
+      "metadata": {},
+      "class": "normal"
+    },
+    {
+      "renderer": "region",
+      "name": "ingress",
+      "displayName": "INGRESS",
+      "nodes": [
+        {
+          "name": "INTERNET",
+          "renderer": "focusedChild",
+          "class": "normal"
+        },
+        {
+          "name": "proxy-prod",
+          "renderer": "focusedChild",
+          "class": "normal"
+        }
+      ],
+      "connections": [
+        {
+          "source": "INTERNET",
+          "target": "proxy-prod",
+          "metrics": {
+            "normal": 1
+          },
+          "class": "normal"
+        }
+      ],
+      "metadata": {},
+      "class": "normal"
+    },
+    {
+      "renderer": "region",
+      "name": "pod-1",
+      "displayName": "POD-1",
+      "nodes": [
+        {
+          "name": "INTERNET",
+          "renderer": "focusedChild",
+          "class": "normal"
+        },
+        {
+          "name": "proxy-prod",
+          "renderer": "focusedChild",
+          "class": "normal"
+        }
+      ],
+      "connections": [
+        {
+          "source": "INTERNET",
+          "target": "proxy-prod",
+          "metrics": {
+            "normal": 1
+          },
+          "class": "normal"
+        }
+      ],
+      "metadata": {},
+      "class": "normal"
+    },
+    {
+      "renderer": "region",
+      "name": "pod-2",
+      "displayName": "POD-2",
+      "nodes": [
+        {
+          "name": "INTERNET",
+          "renderer": "focusedChild",
+          "class": "normal"
+        },
+        {
+          "name": "proxy-prod",
+          "renderer": "focusedChild",
+          "class": "normal"
+        }
+      ],
+      "connections": [
+        {
+          "source": "INTERNET",
+          "target": "proxy-prod",
+          "metrics": {
+            "normal": 1
+          },
+          "class": "normal"
+        }
+      ],
+      "metadata": {},
+      "class": "normal"
+    },
+    {
+      "renderer": "region",
+      "name": "pod-3",
+      "displayName": "POD-3",
+      "nodes": [
+        {
+          "name": "INTERNET",
+          "renderer": "focusedChild",
+          "class": "normal"
+        },
+        {
+          "name": "proxy-prod",
+          "renderer": "focusedChild",
+          "class": "normal"
+        }
+      ],
+      "connections": [
+        {
+          "source": "INTERNET",
+          "target": "proxy-prod",
+          "metrics": {
+            "normal": 1
+          },
+          "class": "normal"
+        }
+      ],
+      "metadata": {},
+      "class": "normal"
+    },
+    {
+      "renderer": "region",
+      "name": "pod-4",
+      "displayName": "POD-4",
+      "nodes": [
+        {
+          "name": "INTERNET",
+          "renderer": "focusedChild",
+          "class": "normal"
+        },
+        {
+          "name": "proxy-prod",
+          "renderer": "focusedChild",
+          "class": "normal"
+        }
+      ],
+      "connections": [
+        {
+          "source": "INTERNET",
+          "target": "proxy-prod",
+          "metrics": {
+            "normal": 1
+          },
+          "class": "normal"
+        }
+      ],
+      "metadata": {},
+      "class": "normal"
+    },
+    {
+      "renderer": "region",
+      "name": "cache-1",
+      "displayName": "CACHE-1",
+      "nodes": [
+        {
+          "name": "INTERNET",
+          "renderer": "focusedChild",
+          "class": "normal"
+        },
+        {
+          "name": "proxy-prod",
+          "renderer": "focusedChild",
+          "class": "normal"
+        }
+      ],
+      "connections": [
+        {
+          "source": "INTERNET",
+          "target": "proxy-prod",
+          "metrics": {
+            "normal": 1
+          },
+          "class": "normal"
+        }
+      ],
+      "metadata": {},
+      "class": "normal"
+    },
+    {
+      "renderer": "region",
+      "name": "cache-2",
+      "displayName": "CACHE-2",
+      "nodes": [
+        {
+          "name": "INTERNET",
+          "renderer": "focusedChild",
+          "class": "normal"
+        },
+        {
+          "name": "proxy-prod",
+          "renderer": "focusedChild",
+          "class": "normal"
+        }
+      ],
+      "connections": [
+        {
+          "source": "INTERNET",
+          "target": "proxy-prod",
+          "metrics": {
+            "normal": 1
+          },
+          "class": "normal"
+        }
+      ],
+      "metadata": {},
+      "class": "normal"
+    },
+    {
+      "renderer": "region",
+      "name": "db-1",
+      "displayName": "DB-1",
+      "nodes": [
+        {
+          "name": "INTERNET",
+          "renderer": "focusedChild",
+          "class": "normal"
+        },
+        {
+          "name": "proxy-prod",
+          "renderer": "focusedChild",
+          "class": "normal"
+        }
+      ],
+      "connections": [
+        {
+          "source": "INTERNET",
+          "target": "proxy-prod",
+          "metrics": {
+            "normal": 1
+          },
+          "class": "normal"
+        }
+      ],
+      "metadata": {},
+      "class": "normal"
+    }
+  ],
+  "connections": [
+    {
+      "source": "INTERNET",
+      "target": "ingress",
+      "metrics": {
+        "normal": 100
+      },
+      "notices": [],
+      "class": "normal"
+    },
+    {
+      "source": "ingress",
+      "target": "pod-1",
+      "metrics": {
+        "normal": 25
+      },
+      "notices": [],
+      "class": "normal"
+    },
+    {
+      "source": "pod-1",
+      "target": "ingress",
+      "metrics": {
+        "normal": 250
+      },
+      "notices": [],
+      "class": "normal"
+    },
+    {
+      "source": "ingress",
+      "target": "pod-2",
+      "metrics": {
+        "normal": 25
+      },
+      "notices": [],
+      "class": "normal"
+    },
+    {
+      "source": "pod-2",
+      "target": "ingress",
+      "metrics": {
+        "normal": 250
+      },
+      "notices": [],
+      "class": "normal"
+    },
+    {
+      "source": "ingress",
+      "target": "pod-3",
+      "metrics": {
+        "normal": 25
+      },
+      "notices": [],
+      "class": "normal"
+    },
+    {
+      "source": "pod-3",
+      "target": "ingress",
+      "metrics": {
+        "normal": 250
+      },
+      "notices": [],
+      "class": "normal"
+    },
+    {
+      "source": "ingress",
+      "target": "pod-4",
+      "metrics": {
+        "normal": 25
+      },
+      "notices": [],
+      "class": "normal"
+    },
+    {
+      "source": "pod-4",
+      "target": "ingress",
+      "metrics": {
+        "normal": 250
+      },
+      "notices": [],
+      "class": "normal"
+    },
+    {
+      "source": "pod-1",
+      "target": "db-1",
+      "metrics": {
+        "normal": 13
+      },
+      "notices": [],
+      "class": "normal"
+    },
+    {
+      "source": "db-1",
+      "target": "pod-1",
+      "metrics": {
+        "normal": 125
+      },
+      "notices": [],
+      "class": "normal"
+    },
+    {
+      "source": "pod-2",
+      "target": "db-1",
+      "metrics": {
+        "normal": 13
+      },
+      "notices": [],
+      "class": "normal"
+    },
+    {
+      "source": "db-1",
+      "target": "pod-2",
+      "metrics": {
+        "normal": 125
+      },
+      "notices": [],
+      "class": "normal"
+    },
+    {
+      "source": "pod-3",
+      "target": "db-1",
+      "metrics": {
+        "normal": 13
+      },
+      "notices": [],
+      "class": "normal"
+    },
+    {
+      "source": "db-1",
+      "target": "pod-3",
+      "metrics": {
+        "normal": 125
+      },
+      "notices": [],
+      "class": "normal"
+    },
+    {
+      "source": "pod-4",
+      "target": "db-1",
+      "metrics": {
+        "normal": 13
+      },
+      "notices": [],
+      "class": "normal"
+    },
+    {
+      "source": "db-1",
+      "target": "pod-4",
+      "metrics": {
+        "normal": 125
+      },
+      "notices": [],
+      "class": "normal"
+    },
+    {
+      "source": "pod-1",
+      "target": "cache-1",
+      "metrics": {
+        "normal": 20
+      },
+      "notices": [],
+      "class": "normal"
+    },
+    {
+      "source": "cache-1",
+      "target": "pod-1",
+      "metrics": {
+        "normal": 70
+      },
+      "notices": [],
+      "class": "normal"
+    },
+    {
+      "source": "pod-2",
+      "target": "cache-1",
+      "metrics": {
+        "normal": 20
+      },
+      "notices": [],
+      "class": "normal"
+    },
+    {
+      "source": "cache-1",
+      "target": "pod-2",
+      "metrics": {
+        "normal": 70
+      },
+      "notices": [],
+      "class": "normal"
+    },
+    {
+      "source": "pod-3",
+      "target": "cache-1",
+      "metrics": {
+        "normal": 20
+      },
+      "notices": [],
+      "class": "normal"
+    },
+    {
+      "source": "cache-1",
+      "target": "pod-3",
+      "metrics": {
+        "normal": 70
+      },
+      "notices": [],
+      "class": "normal"
+    },
+    {
+      "source": "pod-4",
+      "target": "cache-1",
+      "metrics": {
+        "normal": 20
+      },
+      "notices": [],
+      "class": "normal"
+    },
+    {
+      "source": "cache-1",
+      "target": "pod-4",
+      "metrics": {
+        "normal": 70
+      },
+      "notices": [],
+      "class": "normal"
+    },
+    {
+      "source": "pod-1",
+      "target": "cache-2",
+      "metrics": {
+        "normal": 20
+      },
+      "notices": [],
+      "class": "normal"
+    },
+    {
+      "source": "cache-2",
+      "target": "pod-1",
+      "metrics": {
+        "normal": 70
+      },
+      "notices": [],
+      "class": "normal"
+    },
+    {
+      "source": "pod-2",
+      "target": "cache-2",
+      "metrics": {
+        "normal": 20
+      },
+      "notices": [],
+      "class": "normal"
+    },
+    {
+      "source": "cache-2",
+      "target": "pod-2",
+      "metrics": {
+        "normal": 70
+      },
+      "notices": [],
+      "class": "normal"
+    },
+    {
+      "source": "pod-3",
+      "target": "cache-2",
+      "metrics": {
+        "normal": 20
+      },
+      "notices": [],
+      "class": "normal"
+    },
+    {
+      "source": "cache-2",
+      "target": "pod-3",
+      "metrics": {
+        "normal": 70
+      },
+      "notices": [],
+      "class": "normal"
+    },
+    {
+      "source": "pod-4",
+      "target": "cache-2",
+      "metrics": {
+        "normal": 20
+      },
+      "notices": [],
+      "class": "normal"
+    },
+    {
+      "source": "cache-2",
+      "target": "pod-4",
+      "metrics": {
+        "normal": 70
+      },
+      "notices": [],
+      "class": "normal"
+    }
+  ],
+  "serverUpdateTime": 1477691777441
+}
